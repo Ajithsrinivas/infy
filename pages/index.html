@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="infosys" content="">
+
+    <title>Infosys admin panel</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Custom CSS -->
+    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+
+
+    <!-- Custom Fonts -->
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html"><img src="img/logo-infy.png" class="img-responsive" style="width:93px;margin-top: -11px;"></a>
+            </div>
+            <!-- /.navbar-header -->
+
+            <ul class="nav navbar-top-links navbar-right">
+                <a class="navbar-brand" href="index.html"><img src="img/logo-adidas.png" class="img-responsive" style="width:60px;margin-top: -11px;"></a>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i> Profile</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /.navbar-top-links -->
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                       
+                        <li>
+                            <a href="index.html"><i class="fa fa-columns fa-fw"></i> Request Info</a>
+                        </li>
+						 <li>
+                            <a href="index.html"><i class="fa  fa-ticket fa-fw"></i> visa</a>
+                        </li>
+						 <li>
+                            <a href="index.html"><i class="fa fa-life-ring fa-fw"></i> Others</a>
+                        </li>
+                        
+                           
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Adidas Dashboard</h1>
+                </div>
+               <div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+				<div class="panel panel-default">
+				<div class="panel-heading">
+                            <i class="fa fa-pie-chart  fa-fw"></i> pie chart
+                        </div>
+						<div class="panel-body">
+						<div id="chart-container1">FusionCharts will render here</div>
+                        </div>
+						</div>
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+				<div class="panel panel-default">
+				<div class="panel-heading">
+                            <i class="fa fa-bar-chart-o fa-fw"></i> bar chart
+                        </div>
+						<div class="panel-body">
+						<div id="chart-container">FusionCharts will render here</div>
+                        </div>
+						</div>
+				</div>
+				</div>
+				
+				<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<div class="panel panel-default">
+				<div class="panel-heading">
+				
+                            <i class="fa fa-columns fa-fw"></i> Report data
+                        </div>
+						<div class="panel-body">
+
+                        </div>
+						</div>
+				</div>
+				</div>
+            </div>
+           
+          
+
+    </div>
+	
+	<footer class="footer">
+      <div class="container">
+        <p class="text-muted">Copyright © 2017 Infosys Limited
+</p>
+      </div>
+    </footer>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../js/sb-admin-2.js"></script>
+	<script src="../js/angular.min.js"></script>
+	<script src="../js/fusioncharts.charts.js"></script>
+	<script src="../js/fusioncharts.js"></script>
+	<script>
+	FusionCharts.ready(function () {
+    var revenueChart = new FusionCharts({
+        type: 'doughnut2d',
+        renderAt: 'chart-container1',
+        width: '480',
+        height: '350',
+        dataFormat: 'json',
+        dataSource: {
+            "chart": {
+                "caption": "Split of Revenue by Product Categories",
+                "subCaption": "Last year",
+                "numberPrefix": "$",
+                "paletteColors": "#0075c2,#1aaf5d,#f2c500,#f45b00,#8e0000",
+                "bgColor": "#ffffff",
+                "showBorder": "0",
+                "use3DLighting": "0",
+                "showShadow": "0",
+                "enableSmartLabels": "0",
+                "startingAngle": "310",
+                "showLabels": "0",
+                "showPercentValues": "1",
+                "showLegend": "1",
+                "legendShadow": "0",
+                "legendBorderAlpha": "0",
+                "defaultCenterLabel": "Total revenue: $64.08K",
+                "centerLabel": "Revenue from $label: $value",
+                "centerLabelBold": "1",
+                "showTooltip": "0",
+                "decimals": "0",
+                "captionFontSize": "14",
+                "subcaptionFontSize": "14",
+                "subcaptionFontBold": "0"
+            },
+            "data": [
+                {
+                    "label": "Food",
+                    "value": "28504"
+                }, 
+                {
+                    "label": "Apparels",
+                    "value": "14633"
+                }, 
+                {
+                    "label": "Electronics",
+                    "value": "10507"
+                }, 
+                {
+                    "label": "Household",
+                    "value": "4910"
+                }
+            ]
+        }
+    }).render();
+});
+	</script>
+	<script>
+	FusionCharts.ready(function () {
+    var revenueChart = new FusionCharts({
+        type: 'column2d',
+        renderAt: 'chart-container',
+        width: '480',
+        height: '350',
+        dataFormat: 'json',
+        dataSource: {
+            "chart": {
+                "caption": "Monthly revenue for last year",
+                "subCaption": "Harry's SuperMart",
+                "xAxisName": "Month",
+                "yAxisName": "Revenues (In USD)",
+                "numberPrefix": "$",
+                "paletteColors": "#0075c2",
+                "bgColor": "#ffffff",
+                "borderAlpha": "20",
+                "canvasBorderAlpha": "0",
+                "usePlotGradientColor": "0",
+                "plotBorderAlpha": "10",
+                "placevaluesInside": "1",
+                "rotatevalues": "1",
+                "valueFontColor": "#ffffff",                
+                "showXAxisLine": "1",
+                "xAxisLineColor": "#999999",
+                "divlineColor": "#999999",               
+                "divLineIsDashed": "1",
+                "showAlternateHGridColor": "0",
+                "subcaptionFontBold": "0",
+                "subcaptionFontSize": "14"
+            },            
+            "data": [
+                {
+                    "label": "Jan",
+                    "value": "420000"
+                }, 
+                {
+                    "label": "Feb",
+                    "value": "810000"
+                }, 
+                {
+                    "label": "Mar",
+                    "value": "720000"
+                }, 
+                {
+                    "label": "Apr",
+                    "value": "550000"
+                }, 
+                {
+                    "label": "May",
+                    "value": "910000"
+                }, 
+                {
+                    "label": "Jun",
+                    "value": "510000"
+                }, 
+                {
+                    "label": "Jul",
+                    "value": "680000"
+                }, 
+                {
+                    "label": "Aug",
+                    "value": "620000"
+                }, 
+                {
+                    "label": "Sep",
+                    "value": "610000"
+                }, 
+                {
+                    "label": "Oct",
+                    "value": "490000"
+                }, 
+                {
+                    "label": "Nov",
+                    "value": "900000"
+                }, 
+                {
+                    "label": "Dec",
+                    "value": "730000"
+                }
+            ],
+            "trendlines": [
+                {
+                    "line": [
+                        {
+                            "startvalue": "700000",
+                            "color": "#1aaf5d",
+                            "valueOnRight": "1",
+                            "displayvalue": "Monthly Target"
+                        }
+                    ]
+                }
+            ]
+        }
+    }).render();
+});
+	</script>
+  
+
+</body>
+
+</html>
